@@ -73,98 +73,6 @@ import com.example.cus02demo.ui.theme.*
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
-/*@Composable
-fun HomeScreen(navController: NavController) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = "MoENÚ",
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold
-                    )
-                },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(8,83,148))
-            )
-        }
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = "¡Bienvenido!",
-                fontSize = 40.sp,
-                color = Color(8,83,148),
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
-            Image(
-                painter = painterResource(id = R.drawable.logo_condosa),
-                contentDescription = null,
-                modifier = Modifier.size(300.dp)
-            )
-            Text(
-                text = "Seleccione una opción:",
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 16.dp)
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            GridButtons(navController)
-        }
-    }
-}
-
-@Composable
-fun GridButtons(navController: NavController) {
-    val buttonColors = ButtonDefaults.buttonColors(Color(8, 83, 148))
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Button(onClick = { navController.navigate(route = AppScreen.trackingScreen.route) },modifier = Modifier.weight(1f),colors = buttonColors) {
-                Text("Solicitudes")
-            }
-            Button(onClick = { /* NADA */ },modifier = Modifier.weight(1f),colors = buttonColors) {
-                Text("Solicitantes")
-            }
-        }
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Button(onClick = { /* NADA */ },modifier = Modifier.weight(1f),colors = buttonColors) {
-                Text("Predios")
-            }
-            Button(onClick = { /* NADA */ },modifier = Modifier.weight(1f),colors = buttonColors) {
-                Text("Contratos")
-            }
-        }
-    }
-}
-
-@Preview
-@Composable
-fun HomeScreenPreview() {
-    Cus02DemoTheme(darkTheme = false) {
-        val navController = rememberNavController()
-        HomeScreen(navController = navController)
-    }
-}*/
-
 @Composable
 fun HomeScreen(navController: NavHostController) {
     Surface(
@@ -184,7 +92,7 @@ fun HomeScreen(navController: NavHostController) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                NormalTextComponent(value = "Hey, there")
+                NormalTextComponent(value = "SISVITA")
                 HeadingTextComponent(value = "Bienvenido de Vuelta!")
             }
             Spacer(modifier = Modifier.height(25.dp))
@@ -217,9 +125,10 @@ fun HomeScreen(navController: NavHostController) {
 fun NormalTextComponent(value: String) {
     Text(
         text = value,
-        fontSize = 18.sp,
-        color = Color.Gray,
-        textAlign = TextAlign.Center
+        fontSize = 28.sp,
+        color = Color.Yellow,
+        textAlign = TextAlign.Start,
+        fontWeight = FontWeight.Bold
     )
 }
 
@@ -228,7 +137,7 @@ fun HeadingTextComponent(value: String) {
     Text(
         text = value,
         fontSize = 24.sp,
-        color = Color.White,
+        color = Color.Yellow,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center
 
