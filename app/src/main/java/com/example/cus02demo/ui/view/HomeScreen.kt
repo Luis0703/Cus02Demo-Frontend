@@ -74,7 +74,7 @@ import com.example.cus02demo.ui.theme.*
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navController: NavHostController) {
+/*fun HomeScreen(navController: NavHostController) {
     Surface(
         color = Color.Blue,
         modifier = Modifier
@@ -141,6 +141,151 @@ fun HeadingTextComponent(value: String) {
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center
 
+    )
+}
+
+@Composable
+fun MyTextFieldComponent(labelValue: String, icon: ImageVector) {
+    TextField(
+        value = "",
+        onValueChange = { /* Handle text change */ },
+        label = { Text(labelValue) },
+        leadingIcon = {
+            Icon(
+                imageVector = icon,
+                contentDescription = labelValue
+            )
+        },
+        modifier = Modifier.fillMaxWidth(),
+        singleLine = true
+    )
+}
+
+@Composable
+fun PasswordTextFieldComponent(labelValue: String, icon: ImageVector) {
+    TextField(
+        value = "",
+        onValueChange = { /* Handle text change */ },
+        label = { Text(labelValue) },
+        leadingIcon = {
+            Icon(
+                imageVector = icon,
+                contentDescription = labelValue
+            )
+        },
+        visualTransformation = PasswordVisualTransformation(),
+        modifier = Modifier.fillMaxWidth(),
+        singleLine = true
+    )
+}
+
+@Composable
+fun BottomComponent(
+    textQuery: String,
+    textClickable: String,
+    action: String,
+    navController: NavHostController
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(text = textQuery)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = textClickable,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.clickable {
+                // Acción de navegación
+                navController.navigate("register")
+            }
+        )
+    }
+}*/
+fun HomeScreen(navController: NavHostController) {
+    Surface(
+        color = Color.Blue,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Blue)
+            .padding(28.dp)
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            // Colocar el NormalTextComponent en la parte superior de la pantalla
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                NormalTextComponent(value = "SISVITA")
+            }
+
+            // Spacer para empujar los demás componentes hacia abajo
+            Spacer(modifier = Modifier.height(60.dp))
+
+            // El resto de la pantalla
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    HeadingTextComponent(value = "Bienvenido de Vuelta!")
+                }
+                Spacer(modifier = Modifier.height(25.dp))
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    MyTextFieldComponent(labelValue = "Email", icon = Icons.Outlined.Email)
+                    Spacer(modifier = Modifier.height(10.dp))
+                    PasswordTextFieldComponent(labelValue = "Password", icon = Icons.Outlined.Lock)
+                    Spacer(modifier = Modifier.height(20.dp))
+                    Button(
+                        onClick = { /* Acción de inicio de sesión */ },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Login")
+                    }
+                }
+                Spacer(modifier = Modifier.height(20.dp))
+                BottomComponent(
+                    textQuery = "Eres nuevo",
+                    textClickable = "Registrate",
+                    action = "Login",
+                    navController = navController
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun NormalTextComponent(value: String) {
+    Text(
+        text = value,
+        fontSize = 28.sp,
+        color = Color.Yellow,
+        textAlign = TextAlign.Start,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Composable
+fun HeadingTextComponent(value: String) {
+    Text(
+        text = value,
+        fontSize = 24.sp,
+        color = Color.Yellow,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center
     )
 }
 
