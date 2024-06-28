@@ -214,7 +214,8 @@ fun BottomComponent(
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.clickable {
                 // Acción de navegación
-                navController.navigate("register")
+                /*navController.navigate("register")*/
+                navController.navigate(AppScreen.RegistrationScreen.route)
             }
         )
     }

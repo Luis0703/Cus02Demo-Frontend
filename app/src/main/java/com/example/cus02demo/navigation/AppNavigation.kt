@@ -20,7 +20,7 @@ fun AppNavigation(){
         composable(route = AppScreen.homeScreen.route){
             HomeScreen(navController)
         }
-        composable(route = AppScreen.trackingScreen.route ){
+        composable(route = AppScreen.RegistrationScreen.route ){
             RegistrationScreen(navController)
         }
         /*composable(route = AppScreen.solicitudScreen.route+"/{body}" ){
