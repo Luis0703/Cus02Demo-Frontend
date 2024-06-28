@@ -85,7 +85,7 @@ fun HomeScreen(navController: NavHostController) {
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
-            // Colocar el NormalTextComponent en la parte superior de la pantalla
+
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -219,4 +219,9 @@ fun BottomComponent(
             }
         )
     }
+}
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    HomeScreen(navController = rememberNavController())
 }
