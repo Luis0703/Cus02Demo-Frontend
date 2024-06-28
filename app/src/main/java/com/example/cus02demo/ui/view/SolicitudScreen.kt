@@ -1,4 +1,4 @@
-package com.example.cus02demo.ui.view
+/*package com.example.cus02demo.ui.view
 
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
@@ -589,4 +589,4 @@ fun SolicitudScreenPreview() {
         // Asegúrate de proporcionar instancias reales de tus ViewModels
         SolicitudScreen(navController = navController, body = body)
     }
-}
+}*/
